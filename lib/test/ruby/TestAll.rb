@@ -1,4 +1,4 @@
-require_relative "test-suites/TestSuitesTest"
+require_relative "test-suites/TestSuiteTest"
 
 class TestAll
   def test_suites
