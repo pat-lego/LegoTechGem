@@ -18,6 +18,6 @@ jobs:
     - name: Run Ruby Tests
       run: |
         gem install bundler
-        bundle install --path vendor/bundle
+        bundle install
         ruby lib/test/ruby/TestAll.rb
 
