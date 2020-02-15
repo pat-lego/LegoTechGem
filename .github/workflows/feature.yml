@@ -16,4 +16,8 @@ jobs:
       with:
         ruby-version: '2.6'
     - name: Run Ruby Tests
-      run: ruby lib/test/ruby/TestAll.rb
+      run: |
+        gem install bundler
+        bundle install --path vendor/bundle
+        ruby lib/test/ruby/TestAll.rb
+
