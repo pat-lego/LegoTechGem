@@ -1,5 +1,4 @@
 class TestSuite
-
   # @param name [String] is the name of the TestSuite
   # @param driver [Driver] is the driver variable
   def initialize(name, driver)
@@ -43,7 +42,7 @@ class TestSuite
     # @param name [String] The name of the class
     # @param driver [Driver] The driver of the class
     def initialize(name, driver)
-      @testSuites = TestSuites.new(name, driver)
+      @testSuites = TestSuite.new(name, driver)
     end
 
     # Add a test case to the test suite
