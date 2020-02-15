@@ -3,6 +3,7 @@ A Ruby gem to help developers write test cases for the UI
 
 Please respect the naming definition as taken from here: https://github.com/airbnb/ruby#naming
 Comments and tags must respect the naming from: https://rubydoc.info/gems/yard/file/docs/Tags.md
+Ruby Types are defined here: https://www.geeksforgeeks.org/ruby-data-types/
 
 # How to install dependencies
 

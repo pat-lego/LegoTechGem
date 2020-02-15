@@ -1,10 +1,10 @@
 require "test/unit"
-require_relative "../../../main/ruby/test-suites/TestSuites"
+require_relative "../../../main/ruby/test-suites/TestSuite"
 require_relative "../../../main/ruby/driver/Driver"
 
-class TestSuitesTest < Test::Unit::TestCase
+class TestSuiteTest < Test::Unit::TestCase
   def test_suites_basic
-    testSuites = TestSuites::Builder.new("My Sweet", Driver.new)
+    testSuites = TestSuite::Builder.new("My Sweet", Driver.new)
       .addTestCase("Test Case 1")
       .addTestCase("Test Case 2")
       .addTestCase("Test Case 3")
