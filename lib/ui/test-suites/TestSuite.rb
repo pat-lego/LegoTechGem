@@ -1,3 +1,5 @@
+require_relative "../test-cases/TestCase"
+
 # @author Patrique Legault
 module LegoTechSelenium
   class TestSuite
@@ -19,6 +21,13 @@ module LegoTechSelenium
     # Function used to add a TestCase to thee TestSuite
     # @param testCase [TestCase] A test case to be executed
     def addTestCase(testCase)
+      if testCase.nil?
+        raise "Cannot have nil testCase within TestSuite"
+      end
+
+      unless testCase.instance_of? TestCase
+        raise "testCase is not an instance of TestCase within the TestSuite"
+      end
       @entries.push(testCase)
     end
 
