@@ -1,4 +1,7 @@
 # Ruby-Selenium
+
+![](https://github.com/pat-lego/LegoTechGem/workflows/Test%20Feature/badge.svg)
+
 A Ruby gem to help developers write test cases for the UI
 
 Please respect the naming definition as taken from here: https://github.com/airbnb/ruby#naming
