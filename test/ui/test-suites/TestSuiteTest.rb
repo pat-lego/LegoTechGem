@@ -17,4 +17,8 @@ class TestSuiteTest < Test::Unit::TestCase
     assert_equal "My Test Suite", testSuites.getName, "TestSuites name should be correctly set"
     assert_equal 3, testSuites.getNumberOfTestCases, "TestSuites should have 3 entries"
   end
+
+  def run_all()
+    test_suites_basic
+  end
 end

@@ -1,9 +1,8 @@
 # @author Patrique Legault
 module LegoTechSelenium
-  class Actions
+  class Action
 
-    # A function that performs the given action against the webpage given the driver and the action
-    #
+    # The constructor of the Action class
     # @param driver [Driver] The driver object that represents the instance that is connected to the browser
     # @param action [Hash] A ruby object that has the following layout
     #   {
@@ -11,10 +10,17 @@ module LegoTechSelenium
     #        :identifier => Identifier::...
     #        :value => String
     #   }
-    # @return void
-    # @raise Selenium Exceptions
-    def test(driver, action)
+    def initialize(action, driver)
+      @driver = driver
+      @action = action
+    end
+
+    # A function that performs the given action against the webpage given the driver and the action
+    #
+    # @return nil
+    def test()
       raise "Test function in the Actions.rb file has not been overriden"
+      return nil
     end
   end
 end
