@@ -1,5 +1,6 @@
 require "selenium-webdriver"
 
+# @author Patrique Legault
 module LegoTechSelenium
   class LegoTechSelenium::Driver
     @driver

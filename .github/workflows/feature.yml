@@ -19,5 +19,5 @@ jobs:
       run: |
         gem install bundler
         bundle install
-        ruby lib/test/ruby/TestAll.rb
+        ruby test/TestAll.rb
 

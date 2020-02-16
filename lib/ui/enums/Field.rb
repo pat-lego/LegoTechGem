@@ -1,3 +1,4 @@
+# @author Patrique Legault
 module LegoTechSelenium
   module Fields
     RADIO_BUTTON = 1

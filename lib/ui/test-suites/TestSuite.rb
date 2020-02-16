@@ -1,3 +1,4 @@
+# @author Patrique Legault
 module LegoTechSelenium
   class TestSuite
     # @param name [String] is the name of the TestSuite

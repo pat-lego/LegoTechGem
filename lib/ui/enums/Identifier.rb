@@ -1,3 +1,4 @@
+# @author Patrique Legault
 module LegoTechSelenium
   module Identifier
     CSS = 1

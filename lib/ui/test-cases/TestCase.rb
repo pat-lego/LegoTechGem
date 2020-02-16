@@ -1,3 +1,4 @@
+# @author Patrique Legault
 module LegoTechSelenium
   class TestCase
     def initialize(name)
