@@ -15,7 +15,7 @@ module LegoTechSelenium
       end
       @name = name
       @driver = driver
-      @entries = []
+      @testCases = []
     end
 
     # Function used to add a TestCase to thee TestSuite
@@ -28,7 +28,7 @@ module LegoTechSelenium
       unless testCase.instance_of? TestCase
         raise "testCase is not an instance of TestCase within the TestSuite"
       end
-      @entries.push(testCase)
+      @testCases.push(testCase)
     end
 
     # Retrieve the name of the TestSuite
@@ -40,7 +40,7 @@ module LegoTechSelenium
     # Retrieve the number of TestCases within the TestSuite
     # @return [Number] Number of TestCases
     def getNumberOfTestCases
-      return @entries.size
+      return @testCases.size
     end
 
     # Function that will invoke all test cases

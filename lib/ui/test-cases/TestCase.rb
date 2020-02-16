@@ -28,6 +28,10 @@ module LegoTechSelenium
       @actions.push(action)
     end
 
+    def run()
+      raise "Not yet implemented"
+    end
+
     class Builder
       def initialize(name, driver)
         @testCase = TestCase.new(name, driver)
