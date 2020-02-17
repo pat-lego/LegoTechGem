@@ -45,10 +45,10 @@ module LegoTechSelenium
     end
 
     # Function used to invoke all of the actions within the list
-    # @return nil
     def run()
-      raise "Not yet implemented"
-      return nil
+      @actions.each do |action|
+        action.test()
+      end
     end
 
     class Builder

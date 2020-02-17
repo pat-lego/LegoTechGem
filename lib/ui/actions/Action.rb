@@ -17,10 +17,8 @@ module LegoTechSelenium
 
     # A function that performs the given action against the webpage given the driver and the action
     #
-    # @return nil
     def test()
       raise "Test function in the Actions.rb file has not been overriden"
-      return nil
     end
   end
 end

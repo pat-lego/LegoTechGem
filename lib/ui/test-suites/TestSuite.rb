@@ -45,7 +45,9 @@ module LegoTechSelenium
 
     # Function that will invoke all test cases
     def run()
-      raise "Not yet built"
+      @testCases.each do |testCase|
+        testCase.run()
+      end
     end
 
     class Builder
