@@ -45,6 +45,12 @@ You can run the example script which would provide you  with a nice and simple e
 3. Install Ruby
 4. Within the `e2e` folder run `ruby main.rb`
 
+Before Result:
+![Page Before Selenium](https://i.imgur.com/Uza1rae.png)
+
+After Result:
+![Page After Selenium](https://i.imgur.com/FBFWD9h.png)
+
 # Author
 
 [Patrique Legault](mailto:patrique.legault@gmail.com)
