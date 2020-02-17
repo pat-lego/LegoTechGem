@@ -2,11 +2,17 @@ require "test/unit"
 require_relative "../../../lib/ui/test-cases/TestCase"
 require_relative "../../../lib/ui/driver/Driver"
 
-class TestCaseTest < Test::Unit::TestCase
-  def test_case_basic
-    action = LegoTechSelenium::Action.new({
+class CustomAction < LegoTechSelenium::Action
+  def initialize
+    super({
       :value => "Test",
     }, LegoTechSelenium::Driver.new(""))
+  end
+end
+
+class TestCaseTest < Test::Unit::TestCase
+  def test_case_basic
+    action = CustomAction.new
     testCase = LegoTechSelenium::TestCase::Builder.new("My Test Case", LegoTechSelenium::Driver.new(""))
       .add_action(action)
       .add_action(action)
