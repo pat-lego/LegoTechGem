@@ -20,12 +20,12 @@ module LegoTechSelenium
 
     # Function used to add a TestCase to thee TestSuite
     # @param testCase [TestCase] A test case to be executed
-    def addTestCase(testCase)
+    def add_test_case(testCase)
       if testCase.nil?
         raise "Cannot have nil testCase within TestSuite"
       end
 
-      unless testCase.instance_of? TestCase
+      unless testCase.instance_of? LegoTechSelenium::TestCase
         raise "testCase is not an instance of TestCase within the TestSuite"
       end
       @testCases.push(testCase)
@@ -33,13 +33,13 @@ module LegoTechSelenium
 
     # Retrieve the name of the TestSuite
     # @return [String] The name of the TestSuite
-    def getName()
+    def get_name()
       return @name
     end
 
     # Retrieve the number of TestCases within the TestSuite
     # @return [Number] Number of TestCases
-    def getNumberOfTestCases
+    def get_number_of_test_cases
       return @testCases.size
     end
 
@@ -61,8 +61,8 @@ module LegoTechSelenium
       # Add a test case to the test suite
       # @param TestsCase [TestCase] to be added to the list
       # @return self
-      def addTestCase(testCase)
-        @testSuites.addTestCase(testCase)
+      def add_test_case(testCase)
+        @testSuites.add_test_case(testCase)
         self
       end
 

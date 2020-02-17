@@ -9,13 +9,13 @@ class TestSuiteTest < Test::Unit::TestCase
       "My Test Suite",
       LegoTechSelenium::Driver.new("")
     )
-      .addTestCase(testCase)
-      .addTestCase(testCase)
-      .addTestCase(testCase)
+      .add_test_case(testCase)
+      .add_test_case(testCase)
+      .add_test_case(testCase)
       .build
 
-    assert_equal "My Test Suite", testSuites.getName, "TestSuites name should be correctly set"
-    assert_equal 3, testSuites.getNumberOfTestCases, "TestSuites should have 3 entries"
+    assert_equal "My Test Suite", testSuites.get_name, "TestSuites name should be correctly set"
+    assert_equal 3, testSuites.get_number_of_test_cases, "TestSuites should have 3 entries"
   end
 
   def run_all()

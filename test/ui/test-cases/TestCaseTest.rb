@@ -4,15 +4,17 @@ require_relative "../../../lib/ui/driver/Driver"
 
 class TestCaseTest < Test::Unit::TestCase
   def test_case_basic
-    action = LegoTechSelenium::Action.new({}, LegoTechSelenium::Driver.new(""))
+    action = LegoTechSelenium::Action.new({
+      :value => "Test",
+    }, LegoTechSelenium::Driver.new(""))
     testCase = LegoTechSelenium::TestCase::Builder.new("My Test Case", LegoTechSelenium::Driver.new(""))
-      .addAction(action)
-      .addAction(action)
-      .addAction(action)
-      .addAction(action)
+      .add_action(action)
+      .add_action(action)
+      .add_action(action)
+      .add_action(action)
       .build
 
-    assert_equal "My Test Case", testCase.getName, "Get the name of the Test Case"
-    assert_equal 4, testCase.getNumberOfActions, "Get the number of actions within the Test Case"
+    assert_equal "My Test Case", testCase.get_name, "Get the name of the Test Case"
+    assert_equal 4, testCase.get_number_of_actions, "Get the number of actions within the Test Case"
   end
 end

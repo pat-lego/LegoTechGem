@@ -10,6 +10,13 @@ Ruby Types are defined here: https://www.geeksforgeeks.org/ruby-data-types/
 
 **Note**: https://stackoverflow.com/questions/28506769/failed-to-require-a-local-gem/28507368#28507368
 
+# How to install Chrome Driver on Mac OSX
+
+In order to control Chrome you will need to install the Chrome Driver please follow these steps.
+https://www.swtestacademy.com/install-chrome-driver-on-mac/
+
+Note once the driver is installed run it manually once in order to allow the system to trust it. If you do not do thisd then the system will not trust it and then it will not open
+
 # How to install dependencies
 
 1. Make sure Ruby is installed `ruby -v` should return the current version of the language on your computer

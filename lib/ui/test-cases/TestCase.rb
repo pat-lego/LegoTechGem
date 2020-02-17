@@ -20,13 +20,13 @@ module LegoTechSelenium
     # Function used to add an action to the list of actions to later be invoked
     # @param action [Action] an object that represents a list of events to invoke
     # @return nil
-    def addAction(action)
+    def add_action(action)
       if action.nil?
         raise "Cannot pass a nil action to TestCase"
       end
 
-      unless action.instance_of? Action
-        raise "action is not an instance of Action within TestCase"
+      unless action.class.superclass.name.eql? ("LegoTechSelenium::Action")
+        raise "action is not an instance of LegoTechSelenium::Action within TestCase"
       end
       @actions.push(action)
       return nil
@@ -34,13 +34,13 @@ module LegoTechSelenium
 
     # Function used to get the name of the Test Case instance
     # @return [String] Name of the Test Case Instance
-    def getName()
+    def get_name()
       @name
     end
 
     # Function get the number of actions within the TestCase
     # [Number] The number of actions within the TestCase
-    def getNumberOfActions()
+    def get_number_of_actions()
       @actions.size
     end
 
@@ -59,8 +59,8 @@ module LegoTechSelenium
       # Function used to add an action using a Builder class
       # @param action [Action] The action to add to the list of actions
       # @return [Builder] the Builder class
-      def addAction(action)
-        @testCase.addAction(action)
+      def add_action(action)
+        @testCase.add_action(action)
         self
       end
 
