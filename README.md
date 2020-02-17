@@ -35,3 +35,24 @@ Note once the driver is installed run it manually once in order to allow the sys
 1. Make sure Ruby is installed `ruby -v` should return the current version of the language on your computer
 2. Make sure you have a built gem
 3. Using the gem command run the following `gem push [YOUR_GEM_NAME].gem`
+
+# Run the Example
+
+You can run the example script which would provide you  with a nice and simple example of how the script works.
+
+1. Install Selenium
+2. Install Chrome Driver (shown above)
+3. Install Ruby
+4. Within the `e2e` folder run `ruby main.rb`
+
+# Author
+
+[Patrique Legault](mailto:patrique.legault@gmail.com)
+
+**Profile Links**
+
+[Github](https://github.com/pat-lego)
+
+[LinkedIn](https://www.linkedin.com/in/patrique-legault/)
+
+[Twitter](https://twitter.com/_patlego)
