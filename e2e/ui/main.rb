@@ -2,7 +2,9 @@ require "selenium-webdriver"
 require_relative "../../lib/ui/driver/Driver"
 require_relative "../../lib/ui/test-cases/TestCase"
 require_relative "../../lib/ui/test-suites/TestSuite"
-require_relative "actions/SimpleAction"
+require_relative "actions/InputAction"
+require_relative "actions/SelectAction"
+require_relative "actions/ButtonAction"
 
 # Function used to create the Selenium Driver
 # @returns [WebDriver] A selenium webdriver that can control Chrome v80
@@ -17,14 +19,26 @@ def createSeleniumDriver()
   Selenium::WebDriver.for :chrome, options: @options
 end
 
-def get_action(driver)
+def get_input_action(driver)
   # Create your action
-  SimpleAction.new(driver)
+  InputAction.new(driver)
+end
+
+def get_select_action(driver)
+  # Create your action
+  SelectAction.new(driver)
+end
+
+def get_button_action(driver)
+  # Create your action
+  ButtonAction.new(driver)
 end
 
 def get_test_case(driver)
   LegoTechSelenium::TestCase::Builder.new("My first test case", driver)
-    .add_action(get_action(driver))
+    .add_action(get_input_action(driver))
+    .add_action(get_select_action(driver))
+    .add_action(get_button_action(driver))
     .build
 end
 
@@ -44,3 +58,6 @@ testSuite = get_test_suite(driver)
 # Navigate to your page
 driver.set_navigate_to("file://#{Dir.pwd}/sample.html")
 testSuite.run
+
+# Allow user to see the end result
+sleep(5)

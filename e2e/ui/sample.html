@@ -9,6 +9,33 @@
         <label>My custom label </label>
         <input name="first_input" type="text">
     </div>
+
+    <div>
+        <label>My custom select </label>
+        <select name="first_select">
+            <option value="">Please select an option</option>
+            <option value="option_1">Option 1</option>
+            <option value="option_2">Option 2</option>
+            <option value="option_3">Option 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>My custom button </label>
+        <button id="first_button" onclick="clickMe()">Click me!</button>
+        <span id="mySpan" style="display: none;color:red;">You clicked me</span>
+    </div>
 </body>
+
+<script>
+   function clickMe() {
+    var x = document.getElementById("mySpan");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 
 </html>

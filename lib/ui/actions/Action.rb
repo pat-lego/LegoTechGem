@@ -36,8 +36,12 @@ module LegoTechSelenium
       case @action[:fieldtype]
       when LegoTechSelenium::FieldType::INPUT
         executeInput(element)
+      when LegoTechSelenium::FieldType::DROPDOWN_LIST
+        executeSelect(element)
+      when LegoTechSelenium::FieldType::BUTTON
+        executeButton(element)
       else
-        raise "Could not locate the field type to perform the action on, received the following field #{@action[:fieldtype].downcase!}. Currently only supports the fields within FieldType.rb"
+        raise "Could not locate the field type to perform the action on, received the following field #{@action[:fieldtype].downcase}. Currently only supports the fields within FieldType.rb"
       end
     end
 
@@ -45,6 +49,19 @@ module LegoTechSelenium
     # @param element [Selenium::WebDriver::Element]
     def executeInput(element)
       element.send_keys(@action[:value])
+    end
+
+    # Perform the input exection on the element
+    # @param element [Selenium::WebDriver::Element]
+    def executeSelect(element)
+      dropdown = Selenium::WebDriver::Support::Select.new(element)
+      dropdown.select_by(:text, @action[:value])
+    end
+
+    # Perform the input exection on the element
+    # @param element [Selenium::WebDriver::Element]
+    def executeButton(element)
+      element.click
     end
   end
 end

@@ -5,5 +5,6 @@ module LegoTechSelenium
     CHECK_BOX = "check_box"
     INPUT = "input"
     DROPDOWN_LIST = "dropdown_list"
+    BUTTON = "button"
   end
 end
