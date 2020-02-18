@@ -5,6 +5,8 @@ require_relative "../../lib/ui/test-suites/TestSuite"
 require_relative "actions/InputAction"
 require_relative "actions/SelectAction"
 require_relative "actions/ButtonAction"
+require_relative "actions/CheckBoxAction"
+require_relative "actions/RadioButtonAction"
 
 # Function used to create the Selenium Driver
 # @returns [WebDriver] A selenium webdriver that can control Chrome v80
@@ -17,6 +19,16 @@ def createSeleniumDriver()
   @options.add_argument("--start-maximized")
 
   Selenium::WebDriver.for :chrome, options: @options
+end
+
+def get_check_box_action(driver)
+  # Create your action
+  RadioButtonAction.new(driver)
+end
+
+def get_radio_button_action(driver)
+  # Create your action
+  CheckBoxAction.new(driver)
 end
 
 def get_input_action(driver)
@@ -39,6 +51,8 @@ def get_test_case(driver)
     .add_action(get_input_action(driver))
     .add_action(get_select_action(driver))
     .add_action(get_button_action(driver))
+    .add_action(get_check_box_action(driver))
+    .add_action(get_radio_button_action(driver))
     .build
 end
 

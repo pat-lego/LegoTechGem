@@ -40,6 +40,10 @@ module LegoTechSelenium
         executeSelect(element)
       when LegoTechSelenium::FieldType::BUTTON
         executeButton(element)
+      when LegoTechSelenium::FieldType::CHECK_BOX
+        executeCheckBox(element)
+      when LegoTechSelenium::FieldType::RADIO_BUTTON
+        executeRadioButton(element)
       else
         raise "Could not locate the field type to perform the action on, received the following field #{@action[:fieldtype].downcase}. Currently only supports the fields within FieldType.rb"
       end
@@ -61,6 +65,18 @@ module LegoTechSelenium
     # Perform the input exection on the element
     # @param element [Selenium::WebDriver::Element]
     def executeButton(element)
+      element.click
+    end
+
+    # Perform the check box exection on the element
+    # @param element [Selenium::WebDriver::Element]
+    def executeCheckBox(element)
+      element.click
+    end
+
+    # Perform the radio button exection on the element
+    # @param element [Selenium::WebDriver::Element]
+    def executeRadioButton(element)
       element.click
     end
   end
