@@ -69,11 +69,11 @@ You can run the example script which would provide you  with a nice and simple e
 
 Before Result:
 
-![Page Before Selenium](https://i.imgur.com/Uza1rae.png)
+![Page Before Selenium](https://i.imgur.com/vwGZ92G.png)
 
 After Result:
  
-![Page After Selenium](https://i.imgur.com/FBFWD9h.png)
+![Page After Selenium](https://i.imgur.com/A8QF5kk.png)
 
 # Author
 
