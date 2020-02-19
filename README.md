@@ -37,6 +37,21 @@ Note once the driver is installed run it manually once in order to allow the sys
 3. Using the gem command run the following `gem push [YOUR_GEM_NAME].gem`
 
 # How to include within project
+
+**Using Bundler**
+
+1. Install bundler
+2. Create a Gemfile
+3. Locate all the gem [here](https://rubygems.org/gems/legoTech_gem)
+4. Include the version that you wish to use within the Gemfile 
+5. Add `selenium-webdriver` as a dependency to the Gemfile
+6. Run `bundle install`
+7. Create a ruby file called `example.rb`
+8. At the top write `require "legoTech_gem"`
+9. Run the following command `bundle exec ruby example.rb`
+
+**Using pure Gem**
+
 1. Make sure Ruby is installed 
 2. Run `gem install legoTech_gem`
 3. Create a ruby file
