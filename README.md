@@ -37,14 +37,11 @@ Note once the driver is installed run it manually once in order to allow the sys
 3. Using the gem command run the following `gem push [YOUR_GEM_NAME].gem`
 
 # How to include within project
-1. Install bundler
-2. Create a Gemfile
-3. Locate all the gem [here](https://rubygems.org/gems/legoTech_gem)
-4. Include the version that you wish to use within the Gemfile
-5. Run `bundle install`
-6. Create a ruby file
-7. At the top write `require "legoTech_gem"`
-8. Run the file and all your dependencies should be there
+1. Make sure Ruby is installed 
+2. Run `gem install legoTech_gem`
+3. Create a ruby file
+4. At the top write `require "legoTech_gem"`
+5. Run the file and all your dependencies should be there
 
 # Run the Example
 
