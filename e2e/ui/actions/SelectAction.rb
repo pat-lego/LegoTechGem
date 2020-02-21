@@ -9,6 +9,7 @@ class SelectAction < LegoTechSelenium::Action
       :identifier => LegoTechSelenium::Identifier::NAME,
       :fieldname => "first_select",
       :value => "Option 1",
+      :validate => true,
     }, driver)
   end
 end
