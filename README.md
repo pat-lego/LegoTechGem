@@ -2,13 +2,70 @@
 
 ![](https://github.com/pat-lego/LegoTechGem/workflows/Test%20Feature/badge.svg)
 
-A Ruby gem to help developers write test cases for the UI
+A Ruby gem to help developers write test cases for a UI.
 
-Please respect the naming definition as taken from here: https://github.com/airbnb/ruby#naming
-Comments and tags must respect the naming from: https://rubydoc.info/gems/yard/file/docs/Tags.md
-Ruby Types are defined here: https://www.geeksforgeeks.org/ruby-data-types/
+Create Action
+```
+def get_check_box_action(driver)
+  # Create your action
+  RadioButtonAction.new(driver)
+end
 
-**Note**: https://stackoverflow.com/questions/28506769/failed-to-require-a-local-gem/28507368#28507368
+def get_radio_button_action(driver)
+  # Create your action
+  CheckBoxAction.new(driver)
+end
+
+def get_input_action(driver)
+  # Create your action
+  InputAction.new(driver)
+end
+
+def get_select_action(driver)
+  # Create your action
+  SelectAction.new(driver)
+end
+
+def get_button_action(driver)
+  # Create your action
+  ButtonAction.new(driver)
+end
+```
+
+Create Test Case
+```
+def get_test_case(driver)
+  LegoTechSelenium::TestCase::Builder.new("My first test case", driver)
+    .add_action(get_input_action(driver))
+    .add_action(get_select_action(driver))
+    .add_action(get_button_action(driver))
+    .add_action(get_check_box_action(driver))
+    .add_action(get_radio_button_action(driver))
+    .build
+end
+```
+
+Create a Test Suite
+```
+def get_test_suite(driver)
+  LegoTechSelenium::TestSuite::Builder.new("My first test suite", driver)
+    .add_test_case(get_test_case(driver))
+    .build
+end
+```
+
+**And Off you go!**
+
+```
+testSuite = get_test_suite(driver)
+testSuite.run
+```
+
+## Now supports Action validation
+
+You can now validate that the field that you clicked has valid data within it by simply setting the `:validate => true` flag within your Action.
+
+If you don't want to then just don't set it.
 
 # How to install Chrome Driver on Mac OSX
 
@@ -86,3 +143,11 @@ After Result:
 [LinkedIn](https://www.linkedin.com/in/patrique-legault/)
 
 [Twitter](https://twitter.com/_patlego)
+
+# Notes
+
+Please respect the naming definition as taken from here: https://github.com/airbnb/ruby#naming
+Comments and tags must respect the naming from: https://rubydoc.info/gems/yard/file/docs/Tags.md
+Ruby Types are defined here: https://www.geeksforgeeks.org/ruby-data-types/
+
+**Note**: https://stackoverflow.com/questions/28506769/failed-to-require-a-local-gem/28507368#28507368
