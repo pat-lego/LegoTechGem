@@ -35,8 +35,37 @@ module LegoTechSelenium
         return validateInput
       when LegoTechSelenium::FieldType::DROPDOWN_LIST
         return validateSelect
+      when LegoTechSelenium::FieldType::BUTTON
+        # Cannot validate the value of a button
+        return true
+      when LegoTechSelenium::FieldType::CHECK_BOX
+        return validateCheckBox
+      when LegoTechSelenium::FieldType::RADIO_BUTTON
+        return validateRadioButton
       else
         raise "Cannot validate this field type please refer to the validate function within the Validate class for further details"
+      end
+    end
+
+    # Validates the value of an input field
+    # return True -> action value is equal to the input field value
+    def validateCheckBox()
+      puts "Asserting that #{LegoTechSelenium::FieldType::INPUT} with field name #{@action[:fieldname]} is set to \"#{@action[:value]}\""
+      unless @action[:value].nil?
+        return @action[:value].eql? @element.attribute("value")
+      else
+        return @action[:fieldname].eql? @element.attribute("value")
+      end
+    end
+
+    # Validates the value of an input field
+    # return True -> action value is equal to the input field value
+    def validateRadioButton()
+      puts "Asserting that #{LegoTechSelenium::FieldType::INPUT} with field name #{@action[:fieldname]} is set to \"#{@action[:value]}\""
+      unless @action[:value].nil?
+        return @action[:value].eql? @element.attribute("value")
+      else
+        return @action[:fieldname].eql? @element.attribute("value")
       end
     end
 

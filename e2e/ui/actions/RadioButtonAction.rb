@@ -8,6 +8,7 @@ class RadioButtonAction < LegoTechSelenium::Action
       :fieldtype => LegoTechSelenium::FieldType::RADIO_BUTTON,
       :identifier => LegoTechSelenium::Identifier::ID,
       :fieldname => "male",
+      :validate => true,
     }, driver)
   end
 end
