@@ -147,7 +147,9 @@ After Result:
 # Notes
 
 Please respect the naming definition as taken from here: https://github.com/airbnb/ruby#naming
+
 Comments and tags must respect the naming from: https://rubydoc.info/gems/yard/file/docs/Tags.md
+
 Ruby Types are defined here: https://www.geeksforgeeks.org/ruby-data-types/
 
 **Note**: https://stackoverflow.com/questions/28506769/failed-to-require-a-local-gem/28507368#28507368
