@@ -1,6 +1,7 @@
 # @author Patrique Legault
 
 require_relative "../enums/FieldType"
+require_relative "../validate/ValidateElement"
 
 module LegoTechSelenium
   class Action
@@ -12,6 +13,7 @@ module LegoTechSelenium
     #        :fieldtype => Fields::...
     #        :identifier => Identifier::...
     #        :value => String
+    #        :validate => True -> Verify the value before continuing to the next action. False -> skip validation.
     #   }
     def initialize(action, driver)
       @driver = driver
@@ -29,7 +31,7 @@ module LegoTechSelenium
     end
 
     # A function that performs the given action against the webpage given the driver and the action
-    #
+    # @raise [RuntimeError] FieldType is not supported
     def test()
       element = @wait.until { @selenium_driver.find_element(@action[:identifier], @action[:fieldname]) }
 
@@ -46,6 +48,14 @@ module LegoTechSelenium
         executeRadioButton(element)
       else
         raise "Could not locate the field type to perform the action on, received the following field #{@action[:fieldtype].downcase}. Currently only supports the fields within FieldType.rb"
+      end
+
+      if @action[:validate] == true
+        unless LegoTechSelenium::ValidateElement.new(@action, element).validate
+          raise "Failed to validate the #{@action[:fieldname]} is set to \"#{@action[:value]}\""
+        end
+      else
+        puts "Skipping assertion for #{self.class.name}"
       end
     end
 

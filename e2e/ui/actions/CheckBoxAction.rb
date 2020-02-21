@@ -8,6 +8,8 @@ class CheckBoxAction < LegoTechSelenium::Action
       :fieldtype => LegoTechSelenium::FieldType::CHECK_BOX,
       :identifier => LegoTechSelenium::Identifier::ID,
       :fieldname => "vehicle1",
+      :value => "Bike", # Optional value used for validation, if not present then it will revert too the :fieldname value
+      :validate => true,
     }, driver)
   end
 end

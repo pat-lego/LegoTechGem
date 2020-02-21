@@ -9,6 +9,7 @@ class InputAction < LegoTechSelenium::Action
       :identifier => LegoTechSelenium::Identifier::NAME,
       :fieldname => "first_input",
       :value => "My val",
+      :validate => true,
     }, driver)
   end
 end
