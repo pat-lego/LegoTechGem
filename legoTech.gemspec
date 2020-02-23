@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "legoTech_gem"
-  spec.version = "0.0.4"
+  spec.version = "0.0.5"
   spec.authors = ["Patrique Legault"]
   spec.email = ["patrique.legault@gmail.com"]
   spec.summary = %q{A Ruby library used to test forms using browser automation}

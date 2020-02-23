@@ -85,7 +85,7 @@ Note once the driver is installed run it manually once in order to allow the sys
 
 1. Make sure Ruby is installed `ruby -v` should return the current version of the language on your computer
 2. Install bundler using `gem install bundler` to allow you to build the project
-3. Building is as simple as `gem build ruby-selenium.gemspec` 
+3. Building is as simple as `gem build legoTech.gemspec` 
 
 # How to publish
 
